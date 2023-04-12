@@ -25,46 +25,30 @@
                 xhr.open("get", url);
                 xhr.send();
             }
-            /*
-                        function displayContacts(contacts) {
-                            contacts.forEach(addRow);
-                        }
 
-                        function addRow(contact) {
-                            var tcontent = document.getElementById("tcontent");
-                            var row = tcontent.insertRow();
-
-                            var nameCell = row.insertCell();
-                            nameCell.innerHTML = contact.name;
-
-                            var addressCell = row.insertCell();
-                            addressCell.innerHTML = contact.address;
-
-                            var mobileCell = row.insertCell();
-                            mobileCell.innerHTML = contact.phone.mobile;
-
-
-                        }
-                        */
-
+            function displayContacts(contacts) {
+                contacts.forEach(addRow);
+            }
 
             function addRow(contact) {
                 var tcontent = document.getElementById("tcontent");
                 var row = tcontent.insertRow();
 
-                var fristcell = row.insertCell();
-                fristcell.innerHTML = contact.phone.mobile;
+                var nameCell = row.insertCell();
+                nameCell.innerHTML = contact.name;
 
-                var secountcell = row.insertCell();
-                secountcell.innerHTML = contact.phone.home;
+                var addressCell = row.insertCell();
+                addressCell.innerHTML = contact.address;
 
-                var thirdcell = row.insertCell();
-                thirdcell.innerHTML = contact.phone.office;
+                var mobileCell = row.insertCell();
+                mobileCell.innerHTML = contact.phone.mobile;
+
+
             }
         </script>
 
         <table>
-            <caption>
+            <caption>Information
             </caption>
             <thead>
                 <tr>
