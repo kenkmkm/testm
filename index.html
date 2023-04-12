@@ -1,3 +1,5 @@
+ 
+
 <!DOCTYPE html>
 <html>
 
@@ -17,7 +19,7 @@
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === 4) {
                         var contacts = JSON.parse(xhr.response).contacts;
-                        contacts.foreach(addRow)
+                        contacts.foreach(addRow);
 
                     }
                 };
@@ -25,25 +27,41 @@
                 xhr.open("get", url);
                 xhr.send();
             }
+            /*
+                        function displayContacts(contacts) {
+                            contacts.forEach(addRow);
+                        }
 
-            function displayContacts(contacts) {
-                contacts.forEach(addRow);
-            }
+                        function addRow(contact) {
+                            var tcontent = document.getElementById("tcontent");
+                            var row = tcontent.insertRow();
+
+                            var nameCell = row.insertCell();
+                            nameCell.innerHTML = contact.name;
+
+                            var addressCell = row.insertCell();
+                            addressCell.innerHTML = contact.address;
+
+                            var mobileCell = row.insertCell();
+                            mobileCell.innerHTML = contact.phone.mobile;
+
+
+                        }
+                        */
+
 
             function addRow(contact) {
                 var tcontent = document.getElementById("tcontent");
                 var row = tcontent.insertRow();
 
-                var nameCell = row.insertCell();
-                nameCell.innerHTML = contact.name;
+                var fristcell = row.insertCell();
+                fristcell.innerHTML = contact.phone.mobile;
 
-                var addressCell = row.insertCell();
-                addressCell.innerHTML = contact.address;
+                var secountcell = row.insertCell();
+                secountcell.innerHTML = contact.phone.home;
 
-                var mobileCell = row.insertCell();
-                mobileCell.innerHTML = contact.phone.mobile;
-
-
+                var thirdcell = row.insertCell();
+                thirdcell.innerHTML = contact.phone.office;
             }
         </script>
 
