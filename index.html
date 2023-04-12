@@ -17,7 +17,7 @@
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === 4) {
                         var contacts = JSON.parse(xhr.response).contacts;
-                        displayContacts(contacts);
+                        contacts.foreach(addRow)
 
                     }
                 };
@@ -46,14 +46,20 @@
 
                         }
                         */
-            function displayContacts(contacts) {
-                contacts.foreach(addRow)
-            }
+
 
             function addRow(contact) {
+                var tcontent = document.getElementById("tcontent");
+                var row = tcontent.insertRow();
 
+                var fristcell = row.insertCell();
+                fristcell.innerHTML = contacts.home
 
+                var secountcell = row.insertCell();
+                fristcell.innerHTML = contacts.home
 
+                var thirdcell = row.insertCell();
+                fristcell.innerHTML = contacts.home
             }
         </script>
 
