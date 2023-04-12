@@ -6,37 +6,8 @@
  
     <body onload="initialize()">
         <script>function initialize() {
-    var status = "* Offline *";
-    if (navigator.onLine) {
-        status = "* Online *";
         retrieveContacts();
-    } else {
-        const localStorage = window.localStorage;
-        if (localStorage) {
-            const contacts = localStorage.getItem("contacts");
-            if (contacts) {
-                displayContacts(JSON.parse(contacts));
-            }
-        }
     }
-
-    document.getElementById("status").innerHTML = status;
-
-    document.body.addEventListener(
-            "online",
-            function () {
-                document.getElementById("status").innerHTML = "Online";
-            },
-            false
-            );
-    document.body.addEventListener(
-            "offline",
-            function () {
-                document.getElementById("status").innerHTML = "Offline";
-            },
-            false
-            );
-}
 
 function retrieveContacts() {
     const xhr = new XMLHttpRequest();
