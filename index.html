@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -25,45 +25,46 @@
                 xhr.open("get", url);
                 xhr.send();
             }
+            /*
+                        function displayContacts(contacts) {
+                            contacts.forEach(addRow);
+                        }
 
+                        function addRow(contact) {
+                            var tcontent = document.getElementById("tcontent");
+                            var row = tcontent.insertRow();
+
+                            var nameCell = row.insertCell();
+                            nameCell.innerHTML = contact.name;
+
+                            var addressCell = row.insertCell();
+                            addressCell.innerHTML = contact.address;
+
+                            var mobileCell = row.insertCell();
+                            mobileCell.innerHTML = contact.phone.mobile;
+
+
+                        }
+                        */
             function displayContacts(contacts) {
-                contacts.forEach(addRow);
+                contacts.foreach(addRow)
             }
 
             function addRow(contact) {
-                var tcontent = document.getElementById("tcontent");
-                var row = tcontent.insertRow();
 
-                var nameCell = row.insertCell();
-                //nameCell.setAttribute('data-label', "Name");
-                nameCell.innerHTML = contact.name;
 
-                var addressCell = row.insertCell();
-                //addressCell.setAttribute('data-label', "Address");
-                addressCell.innerHTML = contact.address;
 
-                var mobileCell = row.insertCell();
-                //mobileCell.setAttribute('data-label', "Mobile");
-                mobileCell.innerHTML = contact.phone.mobile;
-
-                var mobileCell = row.insertCell();
-                //mobileCell.setAttribute('data-label', "Mobile");
-                mobileCell.innerHTML = 1;
             }
         </script>
 
-     
         <table>
             <caption>Information
-                <div id="status"></div>
             </caption>
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>Address</th>
                     <th>Mobile</th>
-                    <th>1</th>
-
                 </tr>
             </thead>
             <tbody id="tcontent">
